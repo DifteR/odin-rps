@@ -11,17 +11,27 @@ function getWinner(pick1, pick2) {
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) == 1 ||
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) == -2
   ) {
-    console.log("player 1 wins");
+    //console.log("You win");
+    return "You win";
   } else if (
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) != 0 ||
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) == 2
   ) {
-    console.log("player 2 wins");
+    //console.log("Computer wins");
+    return "Computer wins";
   } else {
-    console.log("It's a draw");
+    return "It's a draw";
+    //console.log("It's a draw");
   }
 }
 
-let player1Picks = computerPlay();
-let player2Picks = computerPlay();
-getWinner(player1Picks, player2Picks);
+function game() {
+  for (let i = 0; i < 5; i++) {
+    let playerPicks = prompt(
+      "Pick between rock, paper and scissors"
+    ).toLowerCase();
+    let computerPicks = computerPlay();
+    console.log(getWinner(playerPicks, computerPicks));
+  }
+}
+game();
