@@ -28,6 +28,12 @@ function getWinner(pick1, pick2) {
 document
   .getElementById("rock")
   .addEventListener("click", () => getWinner("rock", computerPlay()));
+document
+  .getElementById("paper")
+  .addEventListener("click", () => getWinner("paper", computerPlay()));
+document
+  .getElementById("scissors")
+  .addEventListener("click", () => getWinner("scissors", computerPlay()));
 
 //const rockButton = document.getElementById("rock");
 //rockButton.addEventListener("click", console.log("bla"));
