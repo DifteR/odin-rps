@@ -11,19 +11,24 @@ function getWinner(pick1, pick2) {
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) == 1 ||
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) == -2
   ) {
-    console.log("You win");
+    resultsDiv.style.backgroundColor = "green";
+    resultsDiv.textContent = "YOU WON!";
     return "You win";
   } else if (
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) != 0 ||
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) == 2
   ) {
-    console.log("Computer wins");
+    resultsDiv.style.backgroundColor = "red";
+    resultsDiv.textContent = "YOU LOST :(";
     return "Computer wins";
   } else {
-    console.log("It's a draw");
+    resultsDiv.style.backgroundColor = "orange";
+    resultsDiv.textContent = "It's a draw!";
     return "It's a draw";
   }
 }
+
+var resultsDiv = document.getElementById("results");
 
 document
   .getElementById("rock")

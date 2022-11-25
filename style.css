@@ -1,8 +1,4 @@
-#win {
-  background-color: green;
-  display: none;
-}
-#lose {
-  background-color: red;
-  display: none;
+#results {
+  background-color: darkgray;
+  height: 50%;
 }
