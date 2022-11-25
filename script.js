@@ -11,27 +11,27 @@ function getWinner(pick1, pick2) {
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) == 1 ||
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) == -2
   ) {
-    //console.log("You win");
+    console.log("You win");
     return "You win";
   } else if (
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) != 0 ||
     playOptions.indexOf(pick1) - playOptions.indexOf(pick2) == 2
   ) {
-    //console.log("Computer wins");
+    console.log("Computer wins");
     return "Computer wins";
   } else {
+    console.log("It's a draw");
     return "It's a draw";
-    //console.log("It's a draw");
   }
 }
 
-function game() {
-  for (let i = 0; i < 5; i++) {
-    let playerPicks = prompt(
-      "Pick between rock, paper and scissors"
-    ).toLowerCase();
-    let computerPicks = computerPlay();
-    console.log(getWinner(playerPicks, computerPicks));
-  }
-}
-game();
+document
+  .getElementById("rock")
+  .addEventListener("click", () => getWinner("rock", computerPlay));
+
+//const rockButton = document.getElementById("rock");
+//rockButton.addEventListener("click", console.log("bla"));
+//getWinner("rock", computerPlay());
+
+//const paperButton = document.getElementById("paper");
+//paperButton.addEventListener("click", getWinner("paper", computerPlay()));
